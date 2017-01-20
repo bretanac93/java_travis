@@ -8,9 +8,11 @@ public class Main implements Runnable {
 
 		Thread t1 = new Thread(ts);
 		Thread t2 = new Thread(ts);
+		Thread t3 = new Thread(ts);
 
 		t1.start();
 		t2.start();
+		t3.start();
 	}
 
 	public void run() {
