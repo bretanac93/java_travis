@@ -1,5 +1,5 @@
 <project default="all">
-    <target name="all" depends="clean, compile, sleep, jar"/>
+    <target name="all" depends="clean, compile"/>
 
     <target name="clean">
         <delete dir="target" quiet="true" />
@@ -8,15 +8,6 @@
     <target name="compile">
         <mkdir dir="target/classes"/>
         <javac srcdir="src" destdir="target/classes"/>    	
-    </target>
-
-    <target name="sleep">
-        <echo message="Sleeping for a while so you can see the build in the new dashboard" />
-        <sleep seconds="2" />
-    </target>
-
-    <target name="jar" depends="compile">
-        <jar jarfile="target/connectfour.jar" basedir="target/classes"/>
     </target>
 	
 </project>
