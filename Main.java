@@ -1,10 +1,20 @@
-public class Main {
+public class Main implements Runnable {
+
+	private int nsv = 100;
+	
 	public static void main(String[] args) {
-		Person p = new Person("Cesar", 23);
-		try {
-			p.someWeirdMethod(0);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
+		Main ts = new Main();
+
+		Thread t1 = new Thread(ts);
+		Thread t2 = new Thread(ts);
+
+		t1.start();
+		t2.start();
+	}
+
+	public void run() {
+		nsv += 100;
+		System.out.println("Value: " + nsv);
 	}
 }
